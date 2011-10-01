@@ -29,7 +29,7 @@ export HISTCONTROL=erasedups
 shopt -s histappend
 
 # Stanford Kerberos
-export KRB5_CONFIG="$HOME/.krb5/stanford.conf"
+export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
 
 # jslint conf
 alias jsl='jsl -conf ~/.jslint'
