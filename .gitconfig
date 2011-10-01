@@ -1,0 +1,25 @@
+[user]
+  name = Zahan Malkani
+  email = zahanm@gmail.com
+
+[core]
+  editor = vi
+  whitespace = trailing-space,cr-at-eol,tab-in-indent
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+
+[alias]
+  st = status
+  co = checkout
+  plus = commit -a --amend
+  cdiffed = show --pretty='format:' --name-only
+  rpull = pull --rebase
+  b = branch -v
+  rmaster = rebase master
+

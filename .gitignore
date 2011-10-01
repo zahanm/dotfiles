@@ -1,0 +1,11 @@
+*
+!.bashrc
+!.gitignore
+!.bash_profile
+!.ctags
+!.gitconfig
+!.inputrc
+!.jslint
+!.py_startup
+!.vimrc
+
