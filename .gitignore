@@ -6,6 +6,8 @@
 !.gitconfig
 !.inputrc
 !.jslint
+!.krb5
+!.krb5/*.conf
 !.py_startup
 !.vimrc
 !README.md
