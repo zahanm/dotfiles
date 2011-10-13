@@ -22,4 +22,5 @@
   rpull = pull --rebase
   b = branch -v
   rmaster = rebase master
+  up = submodule update
 
