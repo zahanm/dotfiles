@@ -72,7 +72,7 @@ case "$OS" in
   export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
   # homebrew
-  export PATH=$PATH:'/usr/local/bin'
+  export PATH='/usr/local/bin':"$PATH"
 
   # git
   source /usr/local/bin/git-completion.bash
