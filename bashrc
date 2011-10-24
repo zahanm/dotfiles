@@ -32,7 +32,7 @@ export EDITOR="vim"
 export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
 
 # Python
-export PYTHONSTARTUP='$HOME/.py_startup'
+export PYTHONSTARTUP="$HOME/.py_startup"
 
 # -- general stuffs
 
@@ -75,7 +75,7 @@ case "$OS" in
   export PATH='/usr/local/bin':"$PATH"
 
   # git
-  source /usr/local/bin/git-completion.bash
+  source /usr/local/etc/bash_completion.d/git-completion.bash
   export PS1='[\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
   # jslint conf
@@ -118,7 +118,7 @@ case "$HOST" in
   export PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
 
   ;;
-  "brom")
+  "brommb")
 
   # Node.js
   export NODE_PATH='/usr/local/lib/node_modules'
