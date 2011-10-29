@@ -50,7 +50,8 @@ case "$OS" in
   # --- Assumed Ubuntu Linux
 
   # ls options
-  alias ls='ls --color'
+  alias ls='ls --color=auto'
+  export LS_COLORS='di=01;90'
 
   # set variable identifying the chroot you work in (used in the prompt below)
   if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
