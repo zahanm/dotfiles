@@ -34,6 +34,9 @@ export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
 # Python
 export PYTHONSTARTUP="$HOME/.py_startup"
 
+# Ruby
+export RUBYOPT=rubygems
+
 # -- general stuffs
 
 # check the window size after each command and, if necessary,
@@ -105,7 +108,6 @@ case "$HOST" in
 
   # Rubygems setup to always be included
   export PATH=$PATH:/var/lib/gems/1.8/bin
-  export RUBYOPT=rubygems
 
   # Node.js and npm
   export PATH=$PATH:"$HOME/local/bin"
