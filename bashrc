@@ -121,7 +121,7 @@ case "$HOST" in
   export PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
 
   ;;
-  "brommb")
+  "brom")
 
   # Node.js
   export NODE_PATH='/usr/local/lib/node_modules'
