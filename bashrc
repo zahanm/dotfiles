@@ -37,6 +37,9 @@ export PYTHONSTARTUP="$HOME/.py_startup"
 # Ruby
 export RUBYOPT=rubygems
 
+# Node.js
+export NODE_ENV='development'
+
 # -- general stuffs
 
 # check the window size after each command and, if necessary,
