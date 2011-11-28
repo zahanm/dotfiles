@@ -57,7 +57,6 @@ case "$OS" in
 
   # ls options
   alias ls='ls --color=auto'
-  export LS_COLORS='di=01;90'
 
   # set variable identifying the chroot you work in (used in the prompt below)
   if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
@@ -98,6 +97,9 @@ case "$HOST" in
 
   # Alias utilities
 
+  # ls options
+  export LS_COLORS='di=01;90'
+
   # dormouse server
   alias dormouserver='cd $HOME/jabberwocky/dormouse/dormouse-server;bundle exec rails server -p 3777'
 
@@ -124,10 +126,21 @@ case "$HOST" in
   export PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
 
   ;;
+
   "brom")
 
   # Node.js
   export NODE_PATH='/usr/local/lib/node_modules'
 
   ;;
+
+  "ip-10-244-178-215")
+
+  if [ -f /etc/bash_completion.d/git ]; then
+    . /etc/bash_completion.d/git
+  fi
+
+  export PATH='/node/bin':$PATH
+  export NODE_PATH='/node/lib'
+
 esac
