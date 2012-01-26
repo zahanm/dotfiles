@@ -72,6 +72,7 @@ case "$OS" in
   export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
   ;;
+
   "Darwin")
   # --- Mac OS X
 
@@ -85,6 +86,9 @@ case "$OS" in
   # git
   source /usr/local/etc/bash_completion.d/git-completion.bash
   export PS1='[\u@\h \W]$(__git_ps1 " (%s) ")\$ '
+
+  # node.js and npm
+  export NODE_PATH="/usr/local/lib/node_modules"
 
   # jslint conf
   alias jsl='jsl -conf $HOME/.jslint'
@@ -124,9 +128,6 @@ case "$HOST" in
 
   "brom")
 
-  # Node.js
-  export NODE_PATH='/usr/local/lib/node_modules'
-
   ;;
 
   "ip-10-244-178-215")
@@ -137,5 +138,14 @@ case "$HOST" in
 
   export PATH='/node/bin':$PATH
   export NODE_PATH='/node/lib'
+
+  ;;
+
+"zoster")
+
+  # mongodb running locally
+  alias mongodbrun='mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf'
+
+  ;;
 
 esac
