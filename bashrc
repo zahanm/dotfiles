@@ -25,7 +25,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # git
-export PAGER="less"
+export PAGER="less -R"
 export EDITOR="vim"
 
 # Stanford Kerberos
@@ -112,10 +112,6 @@ case "$HOST" in
 
   # Rubygems setup to always be included
   export PATH=$PATH:/var/lib/gems/1.8/bin
-
-  # Node.js and npm
-  export PATH=$PATH:"$HOME/local/bin"
-  export NODE_PATH="$HOME/local/lib/node_modules"
 
   # ManReduce stuff as well
   export RUBYLIB=$RUBYLIB:"$HOME/jabberwocky/manreduce/lib"
