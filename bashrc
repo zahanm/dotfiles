@@ -139,6 +139,9 @@ case "$HOST" in
   export PATH='/node/bin':$PATH
   export NODE_PATH='/node/lib'
 
+  # Load RVM into a shell session *as a function*
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
   ;;
 
 "zoster")
