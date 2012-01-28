@@ -37,9 +37,6 @@ export PYTHONSTARTUP="$HOME/.py_startup"
 # Ruby
 export RUBYOPT=rubygems
 
-# Node.js
-export NODE_ENV='development'
-
 # -- general stuffs
 
 # check the window size after each command and, if necessary,
@@ -124,11 +121,18 @@ case "$HOST" in
   export PATH=$PATH:"$HOME/jabberwocky/dormouse/dormouse-server/bin"
   export PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
 
+  # Amazon EC2 dev
   export EC2_PRIVATE_KEY="$HOME/.ec2/nodesandbox_ec2.pem"
+
+  # Node.js
+  export NODE_ENV='development'
 
   ;;
 
   "brom")
+
+  # Node.js
+  export NODE_ENV='development'
 
   ;;
 
@@ -138,8 +142,10 @@ case "$HOST" in
     . /etc/bash_completion.d/git
   fi
 
+  # Node.js
   export PATH='/node/bin':$PATH
   export NODE_PATH='/node/lib'
+  export NODE_ENV='production'
 
   ;;
 
@@ -147,6 +153,9 @@ case "$HOST" in
 
   # mongodb running locally
   alias mongodbrun='mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf'
+
+  # Node.js
+  export NODE_ENV='development'
 
   ;;
 
