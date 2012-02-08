@@ -121,6 +121,9 @@ case "$HOST" in
   export PATH=$PATH:"$HOME/jabberwocky/dormouse/dormouse-server/bin"
   export PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
 
+  # Amazon EC2 dev
+  export EC2_PRIVATE_KEY="$HOME/.ec2/nodesandbox_ec2.pem"
+
   # Node.js
   export NODE_ENV='development'
 

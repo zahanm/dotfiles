@@ -1,3 +1,4 @@
+
 set shiftwidth=2
 set tabstop=2
 set expandtab
@@ -19,6 +20,9 @@ set smartindent
 
 set autoread
 
+" pathogen autoloads vim plugins
+call pathogen#infect()
+
 if has ("autocmd")
   " File type detection. Indent based on filetype. Recommended.
   filetype plugin indent on
@@ -27,11 +31,11 @@ endif
 set incsearch
 set hlsearch
 
-"Column width of 80 chars"
+" Column width of 80 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
-"Trailing whitespace"
+" Trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
