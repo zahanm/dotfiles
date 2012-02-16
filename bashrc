@@ -37,6 +37,10 @@ export PYTHONSTARTUP="$HOME/.py_startup"
 # Ruby
 export RUBYOPT=rubygems
 
+# Load RVM into a shell session *as a function*
+# and the check makes this machine independant
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 # -- general stuffs
 
 # check the window size after each command and, if necessary,
@@ -146,9 +150,6 @@ case "$HOST" in
   export PATH='/node/bin':$PATH
   export NODE_PATH='/node/lib'
   export NODE_ENV='production'
-
-  # Load RVM into a shell session *as a function*
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
   ;;
 
