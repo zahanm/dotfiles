@@ -25,7 +25,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # git
-export PAGER="less -R"
+export PAGER="less"
 export EDITOR="vim"
 
 # Stanford Kerberos
