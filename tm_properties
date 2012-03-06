@@ -2,7 +2,11 @@
 tabSize  = 2
 softTabs = true
 
-fontName = "Monaco" 
+fontName = 'Monaco'
 fontSize = 12
 
-include = "{.tm_properties,.gitignore}"
+includeFiles = '{ .tm_properties, .gitignore }'
+excludeDirectories = '{ node_modules }'
+
+[ "*.{txt,md,mdown,markdown}" ]
+softWrap = true
