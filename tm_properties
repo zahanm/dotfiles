@@ -1,0 +1,8 @@
+
+tabSize  = 2
+softTabs = true
+
+fontName = "Monaco" 
+fontSize = 12
+
+include = "{.tm_properties,.gitignore}"
