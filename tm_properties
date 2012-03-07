@@ -5,8 +5,11 @@ softTabs = true
 fontName = 'Monaco'
 fontSize = 12
 
-includeFiles = '{ .tm_properties, .gitignore }'
-excludeDirectories = '{ node_modules }'
+includeFiles = "{.tm_properties,.gitignore}"
+excludeDirectories = "{node_modules,py_packages}"
 
-[ "*.{txt,md,mdown,markdown}" ]
+[ *.{txt,md,mdown,markdown} ]
 softWrap = true
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType = "text.plain"
