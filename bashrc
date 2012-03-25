@@ -147,8 +147,6 @@ case "$HOST" in
   fi
 
   # Node.js
-  export PATH='/node/bin':$PATH
-  export NODE_PATH='/node/lib'
   export NODE_ENV='production'
 
   ;;
