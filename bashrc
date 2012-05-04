@@ -154,11 +154,22 @@ case "$HOST" in
 "zoster")
 
   # mongodb running locally
-  alias mongodbrun='mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf'
+  alias mongodbrun='mongod run --config /usr/local/Cellar/mongodb/2.0.4-x86_64/mongod.conf'
+
+  # redis running locally
+  alias redisrun='redis-server /usr/local/etc/redis.conf'
 
   # Node.js
   export NODE_ENV='development'
 
+  # EC2 administration
+  export JAVA_HOME="$(/usr/libexec/java_home)"
+  export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+  export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+  export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.2.5/jars"
+  export EC2_URL="https://ec2.us-west-1.amazonaws.com"
+
+  alias stupidssh="ssh -o 'UserKnownHostsFile=/dev/null' -o 'StrictHostKeyChecking=no'"
   ;;
 
 esac
