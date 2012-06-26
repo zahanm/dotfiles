@@ -28,8 +28,8 @@ alias egrep='egrep --color=auto'
 export PAGER="less"
 export EDITOR="vim"
 
-# Stanford Kerberos
-export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
+# Kerberos
+export KRB5_CONFIG="$HOME/.krb5.mit.conf"
 
 # Python
 export PYTHONSTARTUP="$HOME/.py_startup"
