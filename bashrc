@@ -13,6 +13,7 @@ HISTFILESIZE=2000
 
 # Alias utilities
 alias eb='vi $HOME/.bashrc; source $HOME/.bashrc'
+alias stupidssh="ssh -o 'UserKnownHostsFile=/dev/null' -o 'StrictHostKeyChecking=no'"
 
 # ls options
 alias l='ls -CF'
@@ -28,20 +29,14 @@ alias egrep='egrep --color=auto'
 export PAGER="less"
 export EDITOR="vim"
 
-# Kerberos
-export KRB5_CONFIG="$HOME/.krb5.mit.conf"
+# Stanford Kerberos
+export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
 
 # Python
 export PYTHONSTARTUP="$HOME/.py_startup"
 
 # Ruby
 export RUBYOPT=rubygems
-
-# Load RVM into a shell session *as a function*
-# and the check makes this machine independant
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# -- general stuffs
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -69,8 +64,11 @@ case "$OS" in
   [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
   # git
-  source /etc/bash_completion.d/git
+  [[ -s /etc/bash_completion.d/git ]] && source /etc/bash_completion.d/git
   export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W]$(__git_ps1 " (%s) ")\$ '
+
+  # Node.js
+  export NODE_ENV='production'
 
   ;;
 
@@ -82,17 +80,44 @@ case "$OS" in
   export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
   # homebrew
-  export PATH='/usr/local/bin':"$PATH"
+  export PATH="/usr/local/bin:$PATH"
 
   # git
-  source /usr/local/etc/bash_completion.d/git-completion.bash
+  source "/usr/local/etc/bash_completion.d/git-completion.bash"
   export PS1='[\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
   # node.js and npm
   export NODE_PATH="/usr/local/lib/node_modules"
+  export NODE_ENV="development"
 
   # jslint conf
-  alias jsl='jsl -conf $HOME/.jslint'
+  alias jslint='jslint --indent 2 --browser --nomen'
+
+  # mongodb running locally
+  alias mongodbrun='mongod run --config /usr/local/etc/mongod.conf'
+
+  # redis running locally
+  alias redisrun='redis-server /usr/local/etc/redis.conf'
+
+  # dog executable
+  if [[ -s "$HOME/Documents/Research/langdog/bin/dog.rb" ]]; then
+    alias dog="ruby $HOME/Documents/Research/langdog/bin/dog.rb"
+  fi
+
+  # Load RVM into a shell session *as a function*
+  # and the check makes this machine independant
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm"
+    # Add RVM to PATH for scripting
+    export PATH="$PATH:$HOME/.rvm/bin"
+  fi
+
+  # EC2 administration
+  [[ -s "/usr/libexec/java_home" ]] && export JAVA_HOME="$(/usr/libexec/java_home)"
+  export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+  export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+  [[ -s "/usr/local/Cellar/ec2-api-tools/1.5.2.5/jars" ]] && export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.2.5/jars"
+  export EC2_URL="https://ec2.us-west-1.amazonaws.com"
 
   ;;
 esac
@@ -101,8 +126,6 @@ esac
 HOST=`hostname -s`
 case "$HOST" in
   "arya")
-
-  # Alias utilities
 
   # dormouse server
   alias dormouserver='cd $HOME/jabberwocky/dormouse/dormouse-server;bundle exec rails server -p 3777'
@@ -132,46 +155,5 @@ case "$HOST" in
   export NODE_ENV='development'
 
   ;;
-
-  "brom")
-
-  # Node.js
-  export NODE_ENV='development'
-
-  ;;
-
-  "ip-10-244-178-215")
-
-  if [ -f /etc/bash_completion.d/git ]; then
-    . /etc/bash_completion.d/git
-  fi
-
-  # Node.js
-  export NODE_ENV='production'
-
-  ;;
-
-"zoster")
-
-  # mongodb running locally
-  alias mongodbrun='mongod run --config /usr/local/Cellar/mongodb/2.0.4-x86_64/mongod.conf'
-
-  # redis running locally
-  alias redisrun='redis-server /usr/local/etc/redis.conf'
-
-  # Node.js
-  export NODE_ENV='development'
-
-  # EC2 administration
-  export JAVA_HOME="$(/usr/libexec/java_home)"
-  export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
-  export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
-  export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.2.5/jars"
-  export EC2_URL="https://ec2.us-west-1.amazonaws.com"
-
-  alias stupidssh="ssh -o 'UserKnownHostsFile=/dev/null' -o 'StrictHostKeyChecking=no'"
-  ;;
-
 esac
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
