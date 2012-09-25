@@ -84,6 +84,7 @@ case "$OS" in
 
   # git
   source "/usr/local/etc/bash_completion.d/git-completion.bash"
+  source "/usr/local/etc/bash_completion.d/git-prompt.sh"
   export PS1='[\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
   # node.js and npm
@@ -92,9 +93,6 @@ case "$OS" in
 
   # jslint conf
   alias jslint='jslint --indent 2 --browser --nomen'
-
-  # mongodb running locally
-  alias mongodbrun='mongod run --config /usr/local/etc/mongod.conf'
 
   # redis running locally
   alias redisrun='redis-server /usr/local/etc/redis.conf'
