@@ -90,6 +90,7 @@ case "$OS" in
   # node.js and npm
   export NODE_PATH="/usr/local/lib/node_modules"
   export NODE_ENV="development"
+  export PATH="/usr/local/share/npm/bin:$PATH"
 
   # jslint conf
   alias jslint='jslint --indent 2 --browser --nomen'
