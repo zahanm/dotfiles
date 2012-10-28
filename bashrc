@@ -111,7 +111,11 @@ case "$OS" in
     export PATH="$PATH:$HOME/.rvm/bin"
   fi
 
+  # java and scala
   export JAVA_HOME="$(/usr/libexec/java_home)"
+  source "/usr/local/etc/bash_completion.d/scala"
+
+  # ec2
   export EC2_PRIVATE_KEY="$HOME/.ec2/pk-zahanm.pem" # "$HOME/.ec2/pk-babelon.pem"
   export EC2_CERT="$HOME/.ec2/cert-zahanm.pem" # "$HOME/.ec2/cert-babelon.pem"
   export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
