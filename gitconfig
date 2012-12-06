@@ -23,3 +23,6 @@
   b = branch -v
   rmaster = rebase master
   up = submodule update
+
+[push]
+	default = simple
