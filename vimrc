@@ -6,7 +6,17 @@ set expandtab
 set background=dark
 set showcmd
 set autowrite
-set textwidth=80
+
+" line numbers
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey guifg=DarkGrey
+
+" soft wrapping
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+set textwidth=0
+set wrapmargin=0
 
 set smartcase
 
