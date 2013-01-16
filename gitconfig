@@ -25,4 +25,4 @@
   up = submodule update
 
 [push]
-	default = simple
+  default = simple
