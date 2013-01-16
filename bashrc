@@ -113,7 +113,7 @@ case "$OS" in
 
   # java and scala
   export JAVA_HOME="$(/usr/libexec/java_home)"
-  source "/usr/local/etc/bash_completion.d/scala"
+  [[ -s "/usr/local/etc/bash_completion.d/scala" ]] && source "/usr/local/etc/bash_completion.d/scala"
 
   # ec2
   export EC2_PRIVATE_KEY="$HOME/.ec2/pk-zahanm.pem" # "$HOME/.ec2/pk-babelon.pem"
