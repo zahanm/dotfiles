@@ -56,3 +56,6 @@ hi link tab Error
 
 syntax on
 
+" facebook specific
+set tags=~/www/tags
+
