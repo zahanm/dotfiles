@@ -4,3 +4,6 @@ fi
 
 shopt -s checkwinsize
 
+# facebook
+source "$ADMIN_SCRIPTS/ssh/manage_agent.sh"
+

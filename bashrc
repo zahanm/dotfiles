@@ -2,6 +2,31 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# facebook
+if [[ -s "/mnt/vol/engshare/admin/scripts/master.bashrc" ]]; then
+
+  source "/etc/bashrc"
+  source "/mnt/vol/engshare/admin/scripts/master.bashrc"
+  export HIVE_RLWRAP=true
+  source "$ADMIN_SCRIPTS/hive.include"
+  hive_select_release silver
+
+  alias node="/home/engshare/third-party-tools/node/bin/node"
+
+  if [ -s "$HOME/rmate" ]; then
+    PATH=$PATH:"$HOME/rmate"
+  fi
+
+  echo
+  echo " |=====   |====|   |=====   |======   |=====|   |=====|   |=====|   |  / "
+  echo " |        |    |   |        |         |     |   |     |   |     |   | / "
+  echo " |====    |====|   |        |=====    |====|    |     |   |     |   |> "
+  echo " |        |    |   |        |         |     |   |     |   |     |   | \ "
+  echo " |        |    |   |=====   |======   |=====|   |=====|   |=====|   |  \ "
+  echo
+
+fi
+
 # --- history
 # don't put duplicate lines in the history.
 HISTCONTROL=ignoredups:ignorespace

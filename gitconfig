@@ -1,6 +1,6 @@
 [user]
   name = Zahan Malkani
-  email = zahanm@gmail.com
+  email = zahanm@fb.com
 
 [core]
   editor = vim
@@ -26,6 +26,6 @@
   rmaster = rebase master
   up = submodule update
 
-[push]
-  default = simple
+# [push]
+#  default = simple
 
