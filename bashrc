@@ -43,7 +43,7 @@ export RUBYOPT=rubygems
 shopt -s checkwinsize
 
 # Completion of ssh hosts
-complete -W "$(echo `cat $HOME/.ssh/config | grep 'Host ' | cut -d ' ' -f 3`;)" ssh
+complete -W "$(echo `cat $HOME/.ssh/config | grep 'Host ' | grep -v "*" | cut -d ' ' -f 2`;)" ssh
 
 # --- platform specific
 OS=`uname`
@@ -112,7 +112,7 @@ case "$OS" in
   fi
 
   # java and scala
-  export JAVA_HOME="$(/usr/libexec/java_home)"
+  export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
   [[ -s "/usr/local/etc/bash_completion.d/scala" ]] && source "/usr/local/etc/bash_completion.d/scala"
 
   # ec2
