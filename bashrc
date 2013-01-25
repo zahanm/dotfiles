@@ -80,7 +80,7 @@ case "$OS" in
   export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
   # homebrew
-  export PATH="/usr/local/bin:$PATH"
+  PATH="/usr/local/bin":$PATH
 
   # git
   source "/usr/local/etc/bash_completion.d/git-completion.bash"
@@ -90,7 +90,7 @@ case "$OS" in
   # node.js and npm
   export NODE_PATH="/usr/local/lib/node_modules"
   export NODE_ENV="development"
-  export PATH="/usr/local/share/npm/bin:$PATH"
+  PATH=$PATH:"/usr/local/share/npm/bin"
 
   # jslint conf
   alias jslint='jslint --indent 2 --browser --nomen'
@@ -108,12 +108,18 @@ case "$OS" in
   if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
     # Add RVM to PATH for scripting
-    export PATH="$PATH:$HOME/.rvm/bin"
+    PATH=$PATH:"$HOME/.rvm/bin"
   fi
 
   # java and scala
   export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
   [[ -s "/usr/local/etc/bash_completion.d/scala" ]] && source "/usr/local/etc/bash_completion.d/scala"
+
+  # android
+  if [ -d "/Users/zahanm/Documents/Opensource/android-sdk-macosx" ]; then
+    PATH=$PATH:"/Users/zahanm/Documents/Opensource/android-sdk-macosx/tools"
+    PATH=$PATH:"/Users/zahanm/Documents/Opensource/android-sdk-macosx/platform-tools"
+  fi
 
   # ec2
   export EC2_PRIVATE_KEY="$HOME/.ec2/pk-zahanm.pem" # "$HOME/.ec2/pk-babelon.pem"
@@ -133,22 +139,22 @@ case "$HOST" in
   alias dormouserver='cd $HOME/jabberwocky/dormouse/dormouse-server;bundle exec rails server -p 3777'
 
   # Android dev
-  export PATH=$PATH:"$HOME/Documents/ExternalLibs/android-sdk-linux_86/tools/"
+  PATH=$PATH:"$HOME/Documents/ExternalLibs/android-sdk-linux_86/tools/"
 
   # App Engine dev
-  export PATH=$PATH:"$HOME/Documents/ExternalLibs/google_appengine/"
+  PATH=$PATH:"$HOME/Documents/ExternalLibs/google_appengine/"
   alias gappeng_server="$HOME/Documents/ExternalLibs/google_appengine/dev_appserver.py"
   alias gappeng_appcfg="$HOME/Documents/ExternalLibs/google_appengine/appcfg.py"
 
   # Rubygems setup to always be included
-  export PATH=$PATH:/var/lib/gems/1.8/bin
+  PATH=$PATH:/var/lib/gems/1.8/bin
 
   # ManReduce stuff as well
   export RUBYLIB=$RUBYLIB:"$HOME/jabberwocky/manreduce/lib"
 
   # Jabberwocky binaries folder
-  export PATH=$PATH:"$HOME/jabberwocky/dormouse/dormouse-server/bin"
-  export PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
+  PATH=$PATH:"$HOME/jabberwocky/dormouse/dormouse-server/bin"
+  PATH=$PATH:"$HOME/jabberwocky/manreduce/bin"
 
   # Amazon EC2 dev
   export EC2_PRIVATE_KEY="$HOME/.ec2/nodesandbox_ec2.pem"
@@ -159,3 +165,4 @@ case "$HOST" in
   ;;
 esac
 
+export PATH=$PATH
