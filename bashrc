@@ -117,8 +117,12 @@ case "$OS" in
 
   # android
   if [ -d "/Users/zahanm/Documents/Opensource/android-sdk-macosx" ]; then
+    export ANDROID_SDK="/Users/zahanm/Documents/Opensource/android-sdk-macosx"
     PATH=$PATH:"/Users/zahanm/Documents/Opensource/android-sdk-macosx/tools"
     PATH=$PATH:"/Users/zahanm/Documents/Opensource/android-sdk-macosx/platform-tools"
+  fi
+  if [ -d "/Users/zahanm/Documents/Opensource/android-ndk-r8d" ]; then
+    export ANDROID_NDK="/Users/zahanm/Documents/Opensource/android-ndk-r8d"
   fi
 
   # ec2
