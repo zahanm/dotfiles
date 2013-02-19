@@ -38,8 +38,10 @@ if has ("autocmd")
   filetype plugin indent on
 endif
 
+" search settings
 set incsearch
 set hlsearch
+set ignorecase
 
 " Column width of 80 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
