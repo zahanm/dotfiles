@@ -20,7 +20,7 @@
   plus = commit -a --amend
   cdiffed = show --pretty='format:' --name-only
   rpull = pull --rebase
-  ffpull = pull --ff-only
+  ffpull = pull --ff-only -q
   b = branch -v
   rmaster = rebase master
   up = submodule update
