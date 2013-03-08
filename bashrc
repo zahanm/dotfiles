@@ -152,6 +152,15 @@ case "$OS" in
     export ANDROID_NDK_REPOSITORY=$android_ndk
   fi
 
+  if [ -d /Users/zahanm/Documents/Opensource/arcanist/bin ]; then
+    PATH=$PATH:"/Users/zahanm/Documents/Opensource/arcanist/bin"
+    source "/Users/zahanm/Documents/Opensource/arcanist/resources/shell/bash-completion"
+  fi
+
+  if [ -d /Users/zahanm/Documents/Opensource/buck/bin ]; then
+    PATH=$PATH:"/Users/zahanm/Documents/Opensource/buck/bin"
+  fi
+
   ;;
 esac
 
