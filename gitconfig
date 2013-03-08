@@ -17,7 +17,7 @@
 [alias]
   st = status
   co = checkout
-  plus = commit -a --amend
+  plus = commit -a --amend --no-edit
   cdiffed = show --pretty='format:' --name-only
   rpull = pull --rebase
   ffpull = pull --ff-only --no-stat
