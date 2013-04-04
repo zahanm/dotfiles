@@ -19,6 +19,7 @@
   co = checkout
   plus = commit -a --amend --no-edit
   cdiffed = show --pretty='format:' --name-only
+  cshow = log -1 --pretty=medium
   rpull = pull --rebase
   ffpull = pull --ff-only --no-stat
   b = branch -v
