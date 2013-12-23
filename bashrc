@@ -186,7 +186,7 @@ case "$OS" in
 
   webdriverdir='/Users/zahanm/Documents/Facebook/webdriver'
   if [ -d "$webdriverdir" ]; then
-    alias webdriver="$webdriverdir/run.sh -s www.zahanm.sb.facebook.com selenium"
+    alias webdriver="cd $webdriverdir && ./run.sh -s www.zahanm.sb.facebook.com selenium"
   fi
 
   ;;
