@@ -112,7 +112,7 @@ case "$OS" in
   fi
 
   # java and scala
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
+  export JAVA_HOME="$(/usr/libexec/java_home)"
   [[ -s "/usr/local/etc/bash_completion.d/scala" ]] && source "/usr/local/etc/bash_completion.d/scala"
 
   # android
