@@ -45,6 +45,9 @@ shopt -s checkwinsize
 # Completion of ssh hosts
 complete -W "$(echo `cat $HOME/.ssh/config | grep 'Host ' | grep -v "*" | cut -d ' ' -f 2`;)" ssh
 
+# AWS management config
+[[ -s $HOME/.ssh/aws.bash ]] && source $HOME/.ssh/aws.bash
+
 # --- platform specific
 OS=`uname`
 case "$OS" in
