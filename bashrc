@@ -9,12 +9,22 @@ if [[ -s "/mnt/vol/engshare/admin/scripts/master.bashrc" ]]; then
   source "/mnt/vol/engshare/admin/scripts/master.bashrc"
   export HIVE_RLWRAP=true
   source "$ADMIN_SCRIPTS/hive.include"
-  hive_select_release silver
 
   alias node="/home/engshare/third-party-tools/node/bin/node"
+  alias tlocal="t --test-flags 'webdriver-server=localhost' --test-flags 'webdriver-browser=chrome'"
+  alias tstayopen="t --test-flags 'webdriver-server=localhost' --test-flags 'webdriver-stay-open=true' --test-flags 'webdriver-browser=chrome'"
 
+  # chef
+  export PATH=/opt/chef/bin/:$PATH
+
+  # remote TextMate
   if [ -s "$HOME/rmate" ]; then
     PATH=$PATH:"$HOME/rmate"
+  fi
+
+  # custom scripts
+  if [ -s "$HOME/devscripts" ]; then
+    PATH=$PATH:"$HOME/devscripts"
   fi
 
   echo
@@ -91,6 +101,9 @@ case "$OS" in
   # git
   [[ -s /etc/bash_completion.d/git-prompt ]] && source /etc/bash_completion.d/git-prompt
   export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W]$(__git_ps1 " (%s) ")\$ '
+
+  # mercurial
+  [[ -s /etc/bash_completion.d/mercurial.sh ]] && source /etc/bash_completion.d/mercurial.sh
 
   # Node.js
   export NODE_ENV='production'
@@ -208,5 +221,11 @@ case "$HOST" in
 
   ;;
 esac
+
+# More Facebook
+if [ -f /mnt/vol/engshare/admin/scripts/scm-prompt ]; then
+  source /mnt/vol/engshare/admin/scripts/scm-prompt
+  export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W] ($(_dotfiles_scm_info)) \$ '
+fi
 
 export PATH=$PATH
