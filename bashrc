@@ -29,9 +29,6 @@ alias egrep='egrep --color=auto'
 export PAGER="less"
 export EDITOR="vim"
 
-# Stanford Kerberos
-export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
-
 # Python
 export PYTHONSTARTUP="$HOME/.py_startup"
 
@@ -141,6 +138,7 @@ esac
 HOST=`hostname -s`
 case "$HOST" in
   "arya")
+  # home server
 
   # dormouse server
   alias dormouserver='cd $HOME/jabberwocky/dormouse/dormouse-server;bundle exec rails server -p 3777'
@@ -168,6 +166,18 @@ case "$HOST" in
 
   # Node.js
   export NODE_ENV='development'
+
+  ;;
+
+  "zahanm-mba")
+  # facebook work laptop
+  ;;
+
+  "zoster")
+  # home laptop
+
+  # Stanford Kerberos
+  export KRB5_CONFIG="$HOME/.krb5.stanford.conf"
 
   ;;
 esac
