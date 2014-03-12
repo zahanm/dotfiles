@@ -29,3 +29,6 @@
 # [push]
 #  default = simple
 
+[http]
+  proxy = fwdproxy.any:8080
+

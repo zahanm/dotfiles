@@ -1,2 +1,13 @@
 [ui]
-username = Zahan Malkani <zahanm@gmail.com>
+username = Zahan Malkani <zahanm@fb.com>
+
+[alias]
+plus = commit -A --amend
+st = status
+b = bookmark
+twoline = log -f --style compact
+undo = revert --no-backup
+
+[extensions]
+fbamend =
+

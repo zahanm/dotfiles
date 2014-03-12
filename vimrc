@@ -58,4 +58,5 @@ syntax on
 
 " facebook specific
 set tags=~/www/tags
+let g:fb_hack_on = 0 "disables Hack check on save
 
