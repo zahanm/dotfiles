@@ -223,7 +223,7 @@ esac
 # More Facebook
 if [ -f /mnt/vol/engshare/admin/scripts/scm-prompt ]; then
   source /mnt/vol/engshare/admin/scripts/scm-prompt
-  export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W] ($(_dotfiles_scm_info)) \$ '
+  export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W]$(_dotfiles_scm_info) \$ '
 fi
 
 export PATH=$PATH
