@@ -175,15 +175,6 @@ case "$OS" in
 
   # facebook
 
-  if [ -d /Users/zahanm/Documents/Opensource/arcanist/bin ]; then
-    PATH=$PATH:"/Users/zahanm/Documents/Opensource/arcanist/bin"
-    source "/Users/zahanm/Documents/Opensource/arcanist/resources/shell/bash-completion"
-  fi
-
-  if [ -d /Users/zahanm/Documents/Opensource/buck/bin ]; then
-    PATH=$PATH:"/Users/zahanm/Documents/Opensource/buck/bin"
-  fi
-
   webdriverdir='/Users/zahanm/Documents/Facebook/webdriver'
   if [ -d "$webdriverdir" ]; then
     alias webdriver="cd $webdriverdir && ./run.sh -s www.zahanm.sb.facebook.com selenium"
