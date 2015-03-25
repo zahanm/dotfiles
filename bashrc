@@ -180,6 +180,18 @@ case "$OS" in
     alias webdriver="cd $webdriverdir && ./run.sh -s www.zahanm.sb.facebook.com selenium"
   fi
 
+  # added by setup_fb4a.sh
+  android_sdk='/opt/android_sdk'
+  if [ -d "$android_sdk" ]; then
+    export ANDROID_SDK=$android_sdk
+    export ANDROID_HOME=${ANDROID_SDK}
+    export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+  fi
+  android_ndk='/opt/android_ndk'
+  if [ -d "$android_ndk" ]; then
+    export ANDROID_NDK_REPOSITORY=$android_ndk
+  fi
+
   ;;
 esac
 
