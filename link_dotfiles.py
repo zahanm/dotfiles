@@ -10,7 +10,8 @@ def symlink_file(fname, repo, dest):
   target = path.join(repo, fname)
   link = path.join(dest, '.' + fname)
   if path.lexists(link):
-    os.remove(link)
+    print('{0}: skipped, since link exists', link)
+    return
   os.symlink(target, link)
   print(link)
 
