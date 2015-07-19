@@ -92,6 +92,8 @@ case "$OS" in
   export NODE_ENV="development"
   PATH=$PATH:"/usr/local/share/npm/bin"
 
+  export NODE_REPL_HISTORY_FILE="$HOME/.node_repl_history.json"
+
   # jslint conf
   alias jslint='jslint --indent 2 --browser --nomen'
 
