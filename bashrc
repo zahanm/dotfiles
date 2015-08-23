@@ -64,7 +64,7 @@ case "$OS" in
   [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
   # git
-  [[ -s /etc/bash_completion.d/git ]] && source /etc/bash_completion.d/git
+  [[ -s /etc/bash_completion.d/git-prompt ]] && source /etc/bash_completion.d/git-prompt
   export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
   # Node.js
