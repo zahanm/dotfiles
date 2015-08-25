@@ -101,7 +101,7 @@ case "$OS" in
   [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
   # git
-  [[ -s /etc/bash_completion.d/git ]] && source /etc/bash_completion.d/git
+  [[ -s /etc/bash_completion.d/git-prompt ]] && source /etc/bash_completion.d/git-prompt
   export PS1='[${debian_chroot:+($debian_chroot)}\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
   # mercurial
@@ -131,6 +131,8 @@ case "$OS" in
   export NODE_PATH="/usr/local/lib/node_modules"
   export NODE_ENV="development"
   PATH=$PATH:"/usr/local/share/npm/bin"
+
+  export NODE_REPL_HISTORY_FILE="$HOME/.node_repl_history.json"
 
   # jslint conf
   alias jslint='jslint --indent 2 --browser --nomen'
@@ -170,6 +172,25 @@ case "$OS" in
   export EC2_CERT="$HOME/.ec2/cert-zahanm.pem" # "$HOME/.ec2/cert-babelon.pem"
   export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
   export EC2_URL="https://ec2.amazonaws.com"
+
+  # facebook
+
+  webdriverdir='/Users/zahanm/Documents/Facebook/webdriver'
+  if [ -d "$webdriverdir" ]; then
+    alias webdriver="cd $webdriverdir && ./run.sh -s www.zahanm.sb.facebook.com selenium"
+  fi
+
+  # added by setup_fb4a.sh
+  android_sdk='/opt/android_sdk'
+  if [ -d "$android_sdk" ]; then
+    export ANDROID_SDK=$android_sdk
+    export ANDROID_HOME=${ANDROID_SDK}
+    export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+  fi
+  android_ndk='/opt/android_ndk'
+  if [ -d "$android_ndk" ]; then
+    export ANDROID_NDK_REPOSITORY=$android_ndk
+  fi
 
   ;;
 esac

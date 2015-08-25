@@ -1,4 +1,23 @@
 
+" For Vundle
+
+set shell=bash
+set nocompatible " be iMproved
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" put Vundle plugins in here
+Plugin 'dag/vim-fish'
+
+call vundle#end()
+" File type detection. Indent based on filetype. Required by Vundle
+filetype plugin indent on
+
+" General config from here on out
+
 set shiftwidth=2
 set tabstop=2
 set expandtab
@@ -29,14 +48,6 @@ set autoindent
 set smartindent
 
 set autoread
-
-" pathogen autoloads vim plugins
-call pathogen#infect()
-
-if has ("autocmd")
-  " File type detection. Indent based on filetype. Recommended.
-  filetype plugin indent on
-endif
 
 " search settings
 set incsearch
