@@ -35,6 +35,8 @@ if [[ -s "/mnt/vol/engshare/admin/scripts/master.bashrc" ]]; then
   echo " |        |    |   |=====   |======   |=====|   |=====|   |=====|   |  \ "
   echo
 
+  fish
+
 fi
 
 # --- history
