@@ -35,7 +35,11 @@ function fish_prompt --description 'Write out the prompt'
 
   set -l hg_branch
   if find_hg_root 2>&1
-    set hg_branch ' ('(cat "$HG_ROOT/bookmarks.current")')'
+    if test -f "$HG_ROOT/bookmarks.current"
+      set hg_branch ' ('(cat "$HG_ROOT/bookmarks.current")')'
+    else
+      set hg_branch ' (default)'
+    end
   end
 
   echo -n -s $user @ $host ' ' $cwd $git_branch $hg_branch $suffix ' '
