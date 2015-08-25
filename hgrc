@@ -9,5 +9,11 @@ twoline = log -f --style compact
 undo = revert --no-backup
 
 [extensions]
-fbamend =
+evolve=
+fbamend=!
+directaccess=!
+inhibit=!
+
+[experimental]
+evolution=all
 
