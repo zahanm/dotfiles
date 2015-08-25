@@ -1,5 +1,7 @@
 
 " For Vundle
+
+set shell=sh
 set nocompatible " be iMproved
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
