@@ -26,6 +26,6 @@
   rmaster = rebase master
   up = submodule update
 
-# [push]
-#  default = simple
+[push]
+ default = simple
 
