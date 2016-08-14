@@ -1,2 +1,3 @@
 package brew
+package vundle
 theme default
