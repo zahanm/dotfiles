@@ -10,4 +10,3 @@ set android_ndk '/opt/android_ndk'
 if test -d $android_ndk
   set -x ANDROID_NDK_REPOSITORY $android_ndk
 end
-
