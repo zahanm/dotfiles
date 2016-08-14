@@ -1,2 +1,10 @@
 fisherman/getopts
+fisherman/git_util
+zahanm/fish-hg-util
+fisherman/host_info
+fisherman/humanize_duration
+fisherman/last_job_id
+fisherman/pwd_info
+fisherman/pwd_is_home
+zahanm/simple
 fisherman/z
