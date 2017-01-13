@@ -8,12 +8,3 @@ b = bookmark
 twoline = log -f --style compact
 undo = revert --no-backup
 
-[extensions]
-evolve=
-fbamend=!
-directaccess=!
-inhibit=!
-
-[experimental]
-evolution=all
-
