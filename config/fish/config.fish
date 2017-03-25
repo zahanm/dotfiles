@@ -1,4 +1,6 @@
 
+fish_vi_key_bindings
+
 # add rust binaries to path
 set rust_bin "$HOME/.cargo/bin"
 if test -d $rust_bin
