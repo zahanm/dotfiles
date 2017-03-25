@@ -1,4 +1,6 @@
 
+fish_vi_key_bindings
+
 set android_sdk '/opt/android_sdk'
 if test -d $android_sdk
   set -x ANDROID_SDK $android_sdk
