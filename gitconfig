@@ -23,8 +23,8 @@
   rpull = pull --rebase
   ffpull = pull --ff-only --no-stat
   b = branch -v
-  rmaster = rebase master
   up = submodule update
+  ssl = log --graph --oneline --decorate --all
 
 [push]
   default = simple
