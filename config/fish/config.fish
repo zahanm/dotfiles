@@ -1,4 +1,14 @@
 
+fish_vi_key_bindings
+
+# add rust binaries to path
+set rust_bin "$HOME/.cargo/bin"
+if test -d $rust_bin
+  set -x PATH $PATH $rust_bin
+end
+
+# chef is not doing a great job of setting these
+# copied from ~/.fbchef/environment
 set android_sdk '/opt/android_sdk'
 if test -d $android_sdk
   set -x ANDROID_SDK $android_sdk
