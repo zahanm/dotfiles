@@ -10,7 +10,7 @@ def symlink_file(fname, repo, dest):
   target = path.join(repo, fname)
   link = path.join(dest, '.' + fname)
   if path.lexists(link):
-    print('{0}: skipped, since link exists', link)
+    print('{0}: skipped, since link exists'.format(link))
     return
   os.symlink(target, link)
   print(link)
@@ -19,7 +19,7 @@ def link_dotfiles():
   home = path.expanduser('~')
   dotfile_repo = path.dirname(path.abspath(__file__))
   for fname in os.listdir(dotfile_repo):
-    if fname not in excluded:
+    if fname not in excluded and path.isfile(path.join(dotfile_repo, fname)):
       symlink_file(fname, dotfile_repo, home)
 
 if __name__ == '__main__':
