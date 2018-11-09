@@ -1,26 +1,50 @@
 
 from __future__ import print_function
+import argparse
 import os
 import os.path as path
 
-# no readme, .git and script to be symlinked
-excluded = frozenset(['.git', 'README.md', __file__])
+EXCLUDED = frozenset(['.git', 'README.md', 'archive', __file__])
+FOR_REAL = False
 
-def symlink_file(fname, repo, dest):
-  target = path.join(repo, fname)
-  link = path.join(dest, '.' + fname)
-  if path.lexists(link):
-    print('{0}: skipped, since link exists'.format(link))
-    return
-  os.symlink(target, link)
-  print(link)
 
-def link_dotfiles():
-  home = path.expanduser('~')
-  dotfile_repo = path.dirname(path.abspath(__file__))
-  for fname in os.listdir(dotfile_repo):
-    if fname not in excluded and path.isfile(path.join(dotfile_repo, fname)):
-      symlink_file(fname, dotfile_repo, home)
+def link_dotfiles(src_dir, dest_dir):
+    for fname in os.listdir(src_dir):
+        if fname in EXCLUDED:
+            continue
+        src = path.join(src_dir, fname)
+        if path.isfile(src):
+            symlink_file(fname, src_dir, dest_dir)
+        # explore recursive directories
+        if path.isdir(src):
+            dest = path.join(dest_dir, fname)
+            if not path.isdir(dest):
+                if not FOR_REAL:
+                    print('DRY RUN: mkdir {0}'.format(dest))
+                else:
+                    os.mkdir(dest)
+            link_dotfiles(src, dest)
+
+
+def symlink_file(fname, src, dest):
+    src_file = path.join(src, fname)
+    dest_link = path.join(dest, fname)
+    if path.lexists(dest_link):
+        print('{0}: skipped, since dest exists'.format(dest_link))
+        return
+    if not FOR_REAL:
+        print('DRY RUN: ln -s {0} {1}'.format(src_file, dest_link))
+    else:
+        os.symlink(src_file, dest_link)
+        print('Linked {0}'.format(dest_link))
+
 
 if __name__ == '__main__':
-  link_dotfiles()
+    parser = argparse.ArgumentParser(description='Link dotfiles.')
+    parser.add_argument('--for-real', help='Makes the filesystem changes', action='store_true')
+    args = parser.parse_args()
+    if args.for_real:
+        FOR_REAL = True
+    dotfile_repo = path.dirname(path.abspath(__file__))
+    home = path.expanduser('~')
+    link_dotfiles(dotfile_repo, home)
