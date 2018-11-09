@@ -28,7 +28,7 @@ def link_dotfiles(src_dir, dest_dir):
 
 def symlink_file(fname, src, dest):
     src_file = path.join(src, fname)
-    dest_link = path.join(dest, '.' + fname)
+    dest_link = path.join(dest, fname)
     if path.lexists(dest_link):
         print('{0}: skipped, since dest exists'.format(dest_link))
         return
