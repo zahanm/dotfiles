@@ -3,8 +3,7 @@ from __future__ import print_function
 import os
 import os.path as path
 
-# no readme, .git and script to be symlinked
-excluded = frozenset(['.git', 'README.md', __file__])
+excluded = frozenset(['.git', 'README.md', 'archive', __file__])
 
 def symlink_file(fname, repo, dest):
   target = path.join(repo, fname)
