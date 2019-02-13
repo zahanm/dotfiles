@@ -8,6 +8,12 @@ end
 # make directory colors nice
 set -x LSCOLORS 'GxFxCxDxBxegedabagaced'
 
+# customize prompt colors
+set -x pure_color_current_folder (set_color brblue)
+set -x pure_color_ssh_host $pure_color_yellow
+set -x pure_color_ssh_user_normal $pure_color_magenta
+set -x pure_color_virtualenv (set_color brgreen)
+
 set -x EDITOR 'vim'
 
 # chef is not doing a great job of setting these
