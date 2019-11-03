@@ -30,3 +30,9 @@ if test -d $android_ndk
   set -x ANDROID_NDK_REPOSITORY $android_ndk
 end
 
+set fbsource_dir "$HOME/source/fbsource"
+if test -d $fbsource_dir
+  set -x FBANDROID_DIR "$fbsource_dir/fbandroid"
+  set -x FBOBJC_DIR "$fbsource_dir/fbobjc"
+  set -x XPLAT_DIR "$fbsource_dir/xplat"
+end
