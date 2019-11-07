@@ -8,3 +8,5 @@ b = bookmark
 twoline = log -f --style compact
 undo = revert --no-backup
 
+[hint]
+ack = sl-short-headers commitcloud-old-commits
