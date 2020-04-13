@@ -7,7 +7,7 @@ def main():
   parser = argparse.ArgumentParser(description="Give the order for today's stand-up")
   parser.add_argument("-a", "--all", action="store_true", help="Include server devs")
   args = parser.parse_args()
-  peeps = ["Zahan", "Michael", "Mark", "Ardavan"]
+  peeps = ["Zahan", "Michael", "Mark", "Ardavan", "Wenhui"]
   if args.all:
     peeps += ["Nishad"]
   print(random.sample(peeps, k=len(peeps)))
