@@ -3,7 +3,7 @@
   email = zahanm@gmail.com
 
 [core]
-  editor = vim
+  editor = code --wait
   whitespace = trailing-space,cr-at-eol,tab-in-indent
 
 [color]
