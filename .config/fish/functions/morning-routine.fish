@@ -8,7 +8,7 @@ function morning-routine -d "Pull, update, focus, and build"
     echo "Abort! You have local commits and didn't use --rebase."
     popd; return 1
   end
-  hg pull; or popd; return 2
+  hg pull; or begin; popd; return 2; end
   if contains -- --rebase $argv
     hg rebase --dest fbandroid/stable --base .
   else
