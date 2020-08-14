@@ -10,7 +10,7 @@ twoline = log -f --style compact
 undo = revert --no-backup
 
 [extensions]
-hgext.extdiff =
+extdiff =
 
 [extdiff]
 cmd.ksdiff = /usr/local/bin/ksdiff
