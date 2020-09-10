@@ -3,6 +3,6 @@ function myles -d "Search by filename"
     echo "Must be in fbsource to run this"
     return
   end
-  set EDITOR 'studio --wait'
+  set EDITOR studio
   xplat/tools/myles $argv
 end
