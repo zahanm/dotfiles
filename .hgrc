@@ -1,2 +1,3 @@
 [ui]
 username = Zahan Malkani <zahanm@gmail.com>
+editor = code --wait
