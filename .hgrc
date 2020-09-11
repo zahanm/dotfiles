@@ -1,5 +1,6 @@
 [ui]
 username = Zahan Malkani <zahanm@fb.com>
+editor = code --wait
 merge = Kaleidoscope
 
 [alias]
