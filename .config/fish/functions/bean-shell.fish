@@ -4,6 +4,7 @@ function bean-shell -d "Prepare to count some beans"
   echo # newline
   echo "\
 # Every time
+code .
 source ../collect-beans/env.fish
 
 # Update transactions
