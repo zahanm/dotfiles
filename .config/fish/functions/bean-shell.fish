@@ -9,12 +9,12 @@ source ../collect-beans/env.fish
 
 # Update transactions
 python ../collect-beans/collector.py CONFIG.yaml --existing personal.beancount --days 10
-python ../collect-beans/insert.py CONFIG.yaml collected_beans_transactions.db personal.beancount > tmp-personal.beancount; and mv tmp-personal.beancount personal.beancount
+../collect-beans/categorise-and-insert.sh CONFIG.yaml personal.beancount collected_beans_transactions.db
 # use 'Git: Open Changes' in VS Code to see what was inserted
 
 # Update balances
 python ../collect-beans/collector.py CONFIG.yaml --balance
-python ../collect-beans/insert.py CONFIG.yaml collected_beans_balance.db personal.beancount > tmp-personal.beancount; and mv tmp-personal.beancount personal.beancount
+../collect-beans/categorise-and-insert.sh CONFIG.yaml personal.beancount collected_beans_balance.db
 
 # Expenses analysis
 python ../collect-beans/analysis/spending.py personal.beancount --exclude 'Expenses:Taxes' --exclude 'Expenses:Home:Payment' --exclude 'Expenses:Home:PropertyTax' --exclude 'Expenses:Reimbursable'
