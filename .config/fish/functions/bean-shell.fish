@@ -21,6 +21,8 @@ python ../collect-beans/analysis/spending.py personal.beancount --exclude 'Expen
 
 # Updating credentials, etc., see note bear://x-callback-url/open-note?id=97B280EC-10D3-4E92-B188-D5DBEE75F9F8-28051-00005F1669BB8CD0&new_window=yes
   "
-  pipenv shell # this must be the last command, since it spawns a new shell
+  if not contains -- --instructions $argv
+    pipenv shell # this must be the last command, since it spawns a new shell
+  end
   popd
 end
