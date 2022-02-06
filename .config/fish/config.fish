@@ -23,3 +23,8 @@ set -x LSCOLORS 'GxFxCxDxBxegedabagaced'
 set -x EDITOR 'vim'
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+set homebrew "$HOME/homebrew"
+if test -d $homebrew
+  set -x PATH $homebrew/bin $homebrew/sbin $PATH
+end
