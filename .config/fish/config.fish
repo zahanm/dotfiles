@@ -42,3 +42,5 @@ if test -d $fbsource_dir
   set -x FBOBJC_DIR "$fbsource_dir/fbobjc"
   set -x XPLAT_DIR "$fbsource_dir/xplat"
 end
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
