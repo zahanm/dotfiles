@@ -49,3 +49,8 @@ set homebrew "$HOME/homebrew"
 if test -d $homebrew
   set -x PATH $homebrew/bin $homebrew/sbin $PATH
 end
+
+set pybase (python3 -m site --user-base)
+if test -d $pybase
+  set -x PATH $pybase/bin $PATH
+end
