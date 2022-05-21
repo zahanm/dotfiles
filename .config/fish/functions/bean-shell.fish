@@ -9,19 +9,19 @@ source ../collect-beans/env.fish
 
 # Update transactions
 python ../collect-beans/collector.py CONFIG.yaml --existing main.beancount --days 10
-../collect-beans/categorise-and-insert.sh CONFIG.yaml 2021.beancount main.beancount collected_beans_transactions.db
+../collect-beans/categorise-and-insert.sh CONFIG.yaml 2022.beancount main.beancount collected_beans_transactions.db
 # use 'Git: Open Changes' in VS Code to see what was inserted
 
 # Update balances
 python ../collect-beans/collector.py CONFIG.yaml --balance
-../collect-beans/categorise-and-insert.sh CONFIG.yaml 2021.beancount main.beancount collected_beans_balance.db
+../collect-beans/categorise-and-insert.sh CONFIG.yaml 2022.beancount main.beancount collected_beans_balance.db
 
 # Expenses analysis
 python ../collect-beans/analysis/spending.py main.beancount --exclude 'Expenses:Taxes' --exclude 'Expenses:Home:Payment' --exclude 'Expenses:Home:PropertyTax' --exclude 'Expenses:Reimbursable'
 
 # Updating credentials
-python ../collect-beans/server/index.py
-# Open 1Password and look for the relevant *Plaid* credential.
+# Look at the note below for commands.
+# Then, open 1Password and look for the relevant *Plaid* credential.
 # Unfortunately, I've had to create a new `access_token` every time for it to work.
 # Update the Plaid account ID in CONFIG.yaml
 
