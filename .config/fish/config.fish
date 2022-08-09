@@ -33,3 +33,8 @@ set pybase (python3 -m site --user-base)
 if test -d $pybase
   set -x PATH $pybase/bin $PATH
 end
+
+set 1password "$HOME/.1password"
+if test -d $1password
+  set -x SSH_AUTH_SOCK $1password/agent.sock
+end
