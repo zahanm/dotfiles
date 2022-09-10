@@ -3,7 +3,7 @@ import argparse
 import os
 import os.path as path
 
-EXCLUDED = frozenset([".git", "README.md", "archive", __file__])
+EXCLUDED = frozenset([".git", ".gitignore", "README.md", "archive", __file__])
 FOR_REAL = False
 
 
