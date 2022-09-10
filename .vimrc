@@ -1,22 +1,5 @@
 
-" For Vundle
-
-set shell=bash
 set nocompatible " be iMproved
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-" put Vundle plugins in here
-Plugin 'dag/vim-fish'
-
-call vundle#end()
-" File type detection. Indent based on filetype. Required by Vundle
-filetype plugin indent on
-
-" General config from here on out
 
 set shiftwidth=2
 set tabstop=2
@@ -66,8 +49,3 @@ syn match tab display "\t"
 hi link tab Error
 
 syntax on
-
-" facebook specific
-set tags=~/www/tags
-let g:fb_hack_on = 0 "disables Hack check on save
-
