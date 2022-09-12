@@ -25,9 +25,9 @@ function() {
   homebrew_dir="$HOME/homebrew"
   [[ -d $homebrew_dir ]] && PATH="$homebrew_dir/bin:$homebrew_dir/sbin:$PATH"
 
-  # iTerm2 Shell integration -- not enabling it right now
+  # iTerm2 Shell integration
   iterm2="$HOME/.iterm2_shell_integration.zsh"
-  # [[ -e $iterm2 ]] && source $iterm2
+  [[ -e $iterm2 ]] && source $iterm2
 
   # add custom scripts to path
   scripts_bin="$HOME/.config/bin"
