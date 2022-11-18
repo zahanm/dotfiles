@@ -25,10 +25,6 @@ function() {
   homebrew_dir="$HOME/homebrew"
   [[ -d $homebrew_dir ]] && PATH="$homebrew_dir/bin:$homebrew_dir/sbin:$PATH"
 
-  # iTerm2 Shell integration
-  iterm2="$HOME/.iterm2_shell_integration.zsh"
-  [[ -e $iterm2 ]] && source $iterm2
-
   # add custom scripts to path
   scripts_bin="$HOME/.config/bin"
   [[ -d $scripts_bin ]] && PATH="$PATH:$scripts_bin"
@@ -59,7 +55,18 @@ function() {
 
   onepassword="$HOME/.1password"
   [[ -d $onepassword ]] && export SSH_AUTH_SOCK="$onepassword/agent.sock"
-}
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+  if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  ##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
+
+    # iTerm2 Shell integration
+    iterm2="$HOME/.iterm2_shell_integration.zsh"
+    [[ -e $iterm2 ]] && source $iterm2
+
+    # POWERLEVEL10K
+    # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+  ##### WHAT YOU WANT TO DISABLE FOR WARP - ABOVE
+fi
+}
