@@ -21,10 +21,6 @@ fi
 # In an anonymous function to avoid leaking the local variables to the shell
 function() {
 
-  # Setting up Homebrew
-  homebrew_dir="$HOME/homebrew"
-  [[ -d $homebrew_dir ]] && PATH="$homebrew_dir/bin:$homebrew_dir/sbin:$PATH"
-
   # add custom scripts to path
   scripts_bin="$HOME/.config/bin"
   [[ -d $scripts_bin ]] && PATH="$PATH:$scripts_bin"
