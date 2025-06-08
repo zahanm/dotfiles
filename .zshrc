@@ -52,6 +52,11 @@ function() {
   onepassword="$HOME/.1password"
   [[ -d $onepassword ]] && export SSH_AUTH_SOCK="$onepassword/agent.sock"
 
+  # fnm
+  if command -v fnm >/dev/null 2>&1; then
+    eval "$(fnm env)"
+  fi
+
   if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   ##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
 
