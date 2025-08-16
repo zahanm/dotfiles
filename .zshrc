@@ -29,7 +29,7 @@ function() {
   rust_bin="$HOME/.cargo/bin"
   [[ -d $rust_bin ]] && PATH="$PATH:$rust_bin"
 
-  android_sdk='/opt/android_sdk'
+  android_sdk="$HOME/Library/Android/sdk"
   if [[ -d $android_sdk ]]; then
     export ANDROID_SDK=$android_sdk
     export ANDROID_HOME=$android_sdk
