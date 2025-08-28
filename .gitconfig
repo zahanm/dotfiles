@@ -44,13 +44,3 @@
   tool = Kaleidoscope
 [pull]
   ff = only
-
-# added by Meta
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
-
-[http "https://git.c2p.facebook.net"]
-  sslCert = /var/facebook/credentials/zahanm/x509/zahanm.pem
